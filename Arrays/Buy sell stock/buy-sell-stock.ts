@@ -1,3 +1,4 @@
+// my solution
 function maxProfit(prices: number[]): number {
 
     let profit=0;
@@ -35,4 +36,15 @@ function maxProfit(prices: number[]): number {
         }
     }
     return profit;
+};
+
+// best solution
+function maxProfit2(prices: number[]): number {
+    let profit = 0
+    let buy = prices[0]
+    for (let i = 1; i < prices.length; i++) {
+        profit = Math.max(prices[i] - buy,profit)
+        buy = Math.min(prices[i], buy)
+    }
+    return profit
 };
