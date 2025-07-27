@@ -26,3 +26,29 @@ function majorityElement(nums: number[]): number {
     return number;
     
 };
+
+
+function solution2(nums:number[]):number{
+
+let freq=1;
+let majorityElem=nums[0];
+
+    for(let i=1;i<nums.length;i++)
+    {
+        if(nums[i]===majorityElem)
+            {
+                freq++;
+            }   
+            if(majorityElem!==nums[i])
+            {
+                freq--;
+            }
+            if(freq===0)
+            {
+                majorityElem=nums[i];
+                freq=1;
+            }
+    }
+
+    return majorityElem;
+}
